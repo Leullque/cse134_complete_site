@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="images/favicon.ico" rel="icon" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <style media="screen">
+        form label, form input, form textarea, form button, form p{
+            display: block;
+            margin: 1rem;
+        }
+        form p#error-message {
+            color: red;
+        }
+        form p#info-message {
+            color: var(--text-color);
+        }
+        input, textarea {
+            border: 1px solid var(--main-color);
+            border-radius: 6px;
+            width: 60%;
+        }
+        input:user-invalid, textarea:user-invalid {
+            border: 1px solid red;
+            border-radius: 6px;
+            width: 60%;
+        }
+    </style>
+    <title>Contact table</title>
+</head>
+<body>
+    <header>
+        <p>Contact</p>
+    </header>
+    <main>
+        <h1>Contact Form</h1>
+        <form id="contact" action="https://httpbin.org/post" method="POST">
+            <label for="name" style="display: block;">Name:
+                <input type="text" id="name" name="name" required minlength="2" maxlength="100" pattern="^[A-Za-zÀ-ÖØ-öø-ÿ'\-\s]+$" placeholder="name" autofocus="true"/>
+            </label>
+            
+            <label for="email">Email:
+                <input type="email" id="email" name="email" required maxlength="100" placeholder="example@mail.com"/>
+            </label>
+            
+            <label for="comment">Comments:
+                <textarea id="comment" name="comment" required minlength="5" maxlength="1000" placeholder="Enter your message here..."></textarea>
+            </label>
+            <input type="hidden" name="possible_bot" value="true">
+            <p id="error-message">error-message</p>
+            <p id="info-message">info-message</p>
+            <button type="submit">Send</button>
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 <span id="LegalIdentification">Rosie Wang</span>, All Right Reserved</p>
+    </footer>
+</body>
+</html>

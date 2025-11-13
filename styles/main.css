@@ -1,8 +1,8 @@
 :root {
-    --title-font: 'Courier New', Courier, monospace;
-    --content-font: Arial, Helvetica, sans-serif;
-    --base-font-size: 1rem;
-    --card-color: color(display-p3 0.941 0.937 0.847);
+  --title-font: 'Courier New', Courier, monospace;
+  --content-font: Arial, Helvetica, sans-serif;
+  --base-font-size: 1rem;
+  --card-color: color(display-p3 0.941 0.937 0.847);
 }
 
 @supports not (color: color(display-p3 1 1 1)) {
@@ -32,96 +32,96 @@
 
 
 @font-face {
-    /* resource: https://www.fontspace.com */
-    font-family: "HandwrittenMarker";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/Cookiemonster-gv11.ttf") format("truetype");
-}
-
-@font-face {
-     /* resource: https://www.fontsaddict.com */
-    font-family: "ReceiptTitleFont";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/receiptional-receipt-regular.ttf") format("truetype");
+  /* resource: https://www.fontspace.com */
+  font-family: "HandwrittenMarker";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Cookiemonster-gv11.ttf") format("truetype");
 }
 
 @font-face {
     /* resource: https://www.fontsaddict.com */
-    font-family: "ReceiptContentFont";
-    font-style: normal;
-    font-weight: 400;
-    src: url("../fonts/merchant-copy.ttf") format("truetype");
+  font-family: "ReceiptTitleFont";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/receiptional-receipt-regular.ttf") format("truetype");
+}
+
+@font-face {
+  /* resource: https://www.fontsaddict.com */
+  font-family: "ReceiptContentFont";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/merchant-copy.ttf") format("truetype");
 }
 
 html,
 body {
-    background-color: var(--main-color);
-    margin: 0;
-    padding: 0;
+  background-color: var(--main-color);
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    background-color: var(--alternative-color);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 2rem;
-    box-sizing: border-box;
+  background-color: var(--alternative-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 main {
-    margin: 2rem;
+  margin: 2rem;
 }
 
 footer {
-    background-color: var(--alternative-color);
-    padding: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; 
-    flex-wrap: wrap; 
+  background-color: var(--alternative-color);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  flex-wrap: wrap; 
 }
 nav {
-    border: none;
-    gap: 1rem;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    background-color: var(--alternative-color);
-    flex-wrap: wrap;
+  border: none;
+  gap: 1rem;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: var(--alternative-color);
+  flex-wrap: wrap;
 }
 nav a {
-    text-decoration: none;
-    color: black;
-    font-size: var(--base-font-size);
-    margin: 0 1rem;
+  text-decoration: none;
+  color: black;
+  font-size: var(--base-font-size);
+  margin: 0 1rem;
 }
 
 nav a:hover {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--title-font);
-    color: var(--text-color);
+  font-family: var(--title-font);
+  color: var(--text-color);
 }
 
 p, li, span, div, article, section, a {
-    font-family: var(--content-font);
-    color: black;
-    font-size: var(--base-font-size);
-    line-height: 1.5;
+  font-family: var(--content-font);
+  color: black;
+  font-size: var(--base-font-size);
+  line-height: 1.5;
 }
 
 article {
-    background-color: var(--card-color);
-    padding: 1rem; 
-    border-radius: 10px; 
-    margin-bottom: 1rem;
+  background-color: var(--card-color);
+  padding: 1rem; 
+  border-radius: 10px; 
+  margin-bottom: 1rem;
 }
 
 article:has(header):hover, article:has(ul):hover {
@@ -131,10 +131,10 @@ article:has(header):hover, article:has(ul):hover {
 }
 
 #connection_method {
-    display: flex;
-    justify-content: left;
-    gap: 1rem;
-    font-size: var(--base-font-size);
+  display: flex;
+  justify-content: left;
+  gap: 1rem;
+  font-size: var(--base-font-size);
 }
 #connection_method a {
   text-decoration: none;
@@ -142,84 +142,84 @@ article:has(header):hover, article:has(ul):hover {
 }
 
 #connection_method a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 hr.dashed_border {
-    border-top: 2px dashed black;
+  border-top: 2px dashed black;
 }
 
 header.experience-header {
-    background-color: transparent;
-    display: flex;
-    padding: 0;
-    gap: 1rem;
-    justify-content: left;
-    align-items: center;
+  background-color: transparent;
+  display: flex;
+  padding: 0;
+  gap: 1rem;
+  justify-content: left;
+  align-items: center;
 }
 header.experience-header h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .experience-logo img{
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 
 form {
-    max-width: 500px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: var(--alternative-color);
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-family: var(--content-font);
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--alternative-color);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: var(--content-font);
 }
 
 #skills {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 #skills p{
-    aspect-ratio: 1 / 1;
-    width: 200px;
-    color: black;
-    background-image: url(../images/ice.png);
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    display: flex;
-    margin: 0rem 0;
-    padding: 2rem 2rem;
-    flex-direction: column;  
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  aspect-ratio: 1 / 1;
+  width: 200px;
+  color: black;
+  background-image: url(../images/ice.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  display: flex;
+  margin: 0rem 0;
+  padding: 2rem 2rem;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 
 #skills p:hover{
-    background-image: url(../images/ice_blurred.png);
-    color: rgb(9, 44, 110);
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  background-image: url(../images/ice_blurred.png);
+  color: rgb(9, 44, 110);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
 }
 
 form fieldset {
-    border: 1px solid var(--main-color);
-    border-radius: 8px;
-    margin: 1rem;
-    font-weight: bold;
-    font-family: var(--title-font);
+  border: 1px solid var(--main-color);
+  border-radius: 8px;
+  margin: 1rem;
+  font-weight: bold;
+  font-family: var(--title-font);
 }
 
 form legend {
-    font-weight: bold;
-    font-family: var(--title-font);
+  font-weight: bold;
+  font-family: var(--title-font);
 }
 
 form label {
@@ -237,7 +237,7 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-  box-shadow: 0 0 5px rgba(0,123,255,0.3);
+  box-shadow: 0 0 5px blue;
 }
 
 form textarea {
