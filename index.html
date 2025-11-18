@@ -63,10 +63,29 @@
         <a href="contact.html">Contact</a>
     </nav>
     <section id="settings" style="display: flex; align-items: right; gap: 1rem;">
+      <button id="diy_button">DIY</button>
       <button id="darkmode_button">dark</button>
       <p style="font-family: 'HandwrittenMarker', sans-serif; white-space: nowrap;">Rosie Wang</p>
     </section>
   </header>
+  <section id="theme_modal" class="modal" style="display: none;">
+    <h2>Customize Theme</h2>
+    <label for="bg_color">Background Color:
+      <input type="color" id="bg_color" value=var(--main-color)>
+    </label>
+    <label for="text_color">Text Color:
+      <input type="color" id="text_color" value=var(--text-color)>
+    </label>
+    <label for="font_select">Font:
+      <select id="font_select">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="Courier New, monospace">Courier New</option>
+        <option value="Georgia, serif">Georgia</option>
+        <option value="'Comic Sans MS', cursive, sans-serif">Comic Sans</option>
+      </select>
+    </label>
+  <button id="close_modal" class="close">done</button>
+</section>
   <main style="width: 70%; max-width: 900px; margin: 0rem auto; display: flex; flex-direction: column;">
     <h1>Rosie Wang</h1>
     <div id="currentStatus">
