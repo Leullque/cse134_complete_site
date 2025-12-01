@@ -16,6 +16,7 @@
   <link href="images/favicon.ico" rel="icon" />
   <link href="styles/main.css" rel="stylesheet" />
   <script src="files/theme.js" defer></script>
+  <script src="files/project-card.js" type="module" defer></script>
   <title>Rosie Wang's personal website | Projects</title>
 </head>
 <body>
@@ -40,24 +41,26 @@
       <p><b>Tools & Environments:</b> Linux, Git, Docker, Conda, Markdown, LaTeX</p>
       <p><b>DevOps:</b> AWS, CI/CD, Pulumi, .NET, Figma</p>
     </section>
-    <article id="go-project">
-      <h2>Video Streaming Platform with Live Comments</h2>
-        <p>Apr 2025 - June 2025</p>
-        <ul>
-          <li>Supported user video upload and playback with the <strong>MPEG-DASH</strong> standard; utilized <strong>FFmpeg</strong> for ~40% faster playback loading.</li>
-          <li>Designed scalable distributed storage servers with consistent hashing for dynamic node management, supporting 10x faster horizontal scaling and low-latency communication via <strong>gRPC + Protobuf</strong>.</li>
-          <li>Enabled high-concurrency live comments using <strong>Redis Pub/Sub</strong> for broadcasting and <strong>MongoDB</strong> for asynchronous history records.</li>
-          <li>Deployed the cluster remotely on <strong>AWS EC2</strong>. Utilized <strong>etcd</strong> for video metadata consistency and service registration and discovery.</li>
-        </ul>
-    </article>
-    <article id="embeded-project">
+    
+    <project-card>
+
+    </project-card>
+    <project-card>
+      <!-- <header>
         <h2>Low-energy consumption drowning detection wristband</h2>
-            <p>Sept 2023 - Nov 2023</p>
-            <ul>
-            <li>Realized the drowning detection solution based on heart rate and movement, implemented with an <strong>Arduino Nano ESP32</strong>.</li>
-            <li>Optimized positioning, Bluetooth Low Energy communication, and detection logic, achieving low-energy consumption.</li>
-            </ul>
-    </article>
+        <picture class="logo">
+          <source srcset="images/arduino_logo.webp" type="image/webp" media="(max-width: 600px)">
+          <img src="images/arduino_logo.png" alt="Arduino Logo">
+      </header>
+      <p>Sept 2023 - Nov 2023</p>
+      <ul>
+      <li>Realized the drowning detection solution based on heart rate and movement, implemented with an <strong>Arduino Nano ESP32</strong>.</li>
+      <li>Optimized positioning, Bluetooth Low Energy communication, and detection logic, achieving low-energy consumption.</li>
+      </ul>
+      <a href="https://github.com/Leullque/distributed_video_streaming" target="_blank">
+        Learn more →
+      </a> -->
+    </project-card>
   </main>
 
   <footer>
