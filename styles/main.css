@@ -227,11 +227,11 @@ header.experience-header {
   justify-content: left;
   align-items: center;
 }
-header.experience-header h3 {
+header.experience-header h2, header.experience-header h3 {
   margin: 0;
 }
 
-.experience-logo img{
+.logo img{
   width: 40px;
   height: 40px;
 }
