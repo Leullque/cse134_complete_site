@@ -60,8 +60,8 @@ class ProjectCard extends HTMLElement {
                     <source srcset="images/go_demo.webp" type="image/webp" media="(max-width: 600px)">
                     <img src="images/go_demo.png" alt="Video Streaming Platform Workflow Demostration">
                 </picture>
-                <p>A Go scalable video streaming platform with FFmpeg integration and Redis Pub/Sub for live comments.</p>
-                <p>Apr 2025 - June 2025</p>
+                <p class="description">A Go scalable video streaming platform with FFmpeg integration and Redis Pub/Sub for live comments.</p>
+                <p class="time">Apr 2025 - June 2025</p>
                 <a href="#go-details">Learn more →</a>
             </article>
             `;
