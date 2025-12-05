@@ -106,15 +106,16 @@
   <main>
     <h1>Admin Panel</h1>
     <p>This is the administration panel for managing project data.</p>
-    <form id="crud_request">
+    <form id="crud_request" autocomplete="off">
         <fieldset>
             <legend>Identifier</legend>
             <p>Please first enter the identifier key to check whether this project exists.</p>
             <label for="key">key:
-                <input required type="text" id="key" name="key" placeholder="A short identifier for storage"/>
+                <input required type="text" id="key" name="key" placeholder="A short identifier for storage" list="key-list"/>
+                <datalist id="key-list"></datalist>
             </label>
             <div class="button-group">
-                <button id="check" type="button">Check</button>
+                <button id="check" type="submit">Check</button>
                 <button id="delete" type="button">Delete</button>
             </div>
             <p id="info-message"></p>

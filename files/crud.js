@@ -6,12 +6,41 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 var ExistingKeys = false;
 
+document.addEventListener("DOMContentLoaded", () => {
+    const keyList = document.getElementById("key-list");
+    const stored = localStorage.getItem("projectData");
+    if (stored) {
+        const data = JSON.parse(stored);
+        Object.keys(data).forEach(key => {
+            const option = document.createElement("option");
+            option.value = key;
+            keyList.appendChild(option);
+        });
+    }
+} );
+
 function clearFields() {
     const ids = [
         "title", "tags", "time", "link", 
         "description", "webp", "png", "alt"
     ];
     ids.forEach(id => document.getElementById(id).value = "");
+}
+
+function refreshKeyList() {
+    const keyList = document.getElementById("key-list");
+    const stored = localStorage.getItem("projectData");
+
+    keyList.innerHTML = "";
+
+    if (stored) {
+        const data = JSON.parse(stored);
+        Object.keys(data).forEach(key => {
+            const option = document.createElement("option");
+            option.value = key;
+            keyList.appendChild(option);
+        });
+    }
 }
 
 async function checkKey(event) {
@@ -74,6 +103,7 @@ async function deleteKey(event) {
                 infoMessage.textContent = `Project with key "${key}" has been deleted.`;
                 ExistingKeys = false;
                 document.getElementById("delete").style.display = "none";
+                refreshKeyList();
             } else {
                 infoMessage.textContent = `Error: Project with key "${key}" does not exist.`;
             }
@@ -83,6 +113,7 @@ async function deleteKey(event) {
     } catch (err) {
         console.error("Error deleting key:", err);
     }
+    clearFields();
     infoMessage.textContent = `${key} deleted.`;
 }
 
@@ -125,10 +156,12 @@ async function submitRequest(event) {
                 // Create
                 data[key] = new_data;
                 localStorage.setItem("projectData", JSON.stringify(data));
+                refreshKeyList();
             }
         } else {
             infoMessage.textContent = "Error: No project data found in local storage.";
         }
+        clearFields();
     } catch (err) {
         console.error("Error deleting key:", err);
     }
