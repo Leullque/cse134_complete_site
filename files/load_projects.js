@@ -19,18 +19,17 @@ async function loadLocal() {
     // store to localStorage
     try {
     const stored = localStorage.getItem("projectData");
-    if (!stored) {
+    if (!stored || stored==="{}") {
         // initial loading from .json file
         const response = await fetch('./files/project.json');
         const jsonData = await response.json();
         localStorage.setItem("projectData", JSON.stringify(jsonData));
     }
+    const data = JSON.parse(localStorage.getItem("projectData"));
+    displayProjects(data);
     } catch (err) {
     console.error("Error loading local JSON:", err);
     }
-
-    const data = JSON.parse(localStorage.getItem("projectData"));
-    displayProjects(data);
 }
 
 async function loadRemote() {
@@ -39,14 +38,15 @@ async function loadRemote() {
     const response = await fetch(url);
     const bin = await response.json();
     const jsonData = bin.record;
-    localStorage.setItem("projectData", JSON.stringify(jsonData));
+    // localStorage.setItem("projectData", JSON.stringify(jsonData));
+    displayProjects(jsonData);
     } catch (err) {
     console.error("Error loading remote JSON:", err);
     }
 
-    const data = JSON.parse(localStorage.getItem("projectData"));
-    displayProjects(data);
-}
 
-document.getElementById("load-local").addEventListener("click", loadLocal);
-document.getElementById("load-remote").addEventListener("click", loadRemote);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("load-local").addEventListener("click", loadLocal);
+    document.getElementById("load-remote").addEventListener("click", loadRemote);
+});

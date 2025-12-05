@@ -22,5 +22,17 @@
         "description":"A Low energy consumption drowning detection wristband using Arduino and ESP32 with real-time alerts.",
         "time":"Sept 2023 - Nov 2023",
         "link":"#arduino-details"
+    },
+    "python-analysis":{
+        "title":"Vender investment analysis",
+        "tags":["Python","Pandas","Matplotlib"],
+        "demo":{
+            "webp":"images/python_demo.webp",
+            "png":"images/python_demo.png",
+            "alt":"Vender investment analysis demonstration"
+        },
+        "description":"A comprehensive analysis & optimization on Vender sales and cost data.",
+        "time":"Sept 2024 - Nov 2024",
+        "link":"#python-details"
     }
 }

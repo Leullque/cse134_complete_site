@@ -49,38 +49,34 @@ async function checkKey(event) {
     const infoMessage = document.getElementById("info-message");
 
     try {
-        const stored = localStorage.getItem("projectData");
-        if (!stored) {
+        let stored = localStorage.getItem("projectData");
+        if (!stored || stored==="{}") {
             // initial loading from .json file
             const response = await fetch('./files/project.json');
             const jsonData = await response.json();
             localStorage.setItem("projectData", JSON.stringify(jsonData));
             stored = JSON.stringify(jsonData);
         }
-        if (stored) {
-            const data = JSON.parse(stored);
-            if (data[key]) {
-                infoMessage.textContent = `Project with key "${key}" exists. You can update/delete it.`;
-                ExistingKeys = true;
-                document.getElementById("delete").style.display = "inline-block";
-                document.getElementById("submit").textContent = "Update";
-                document.getElementById("title").value = data[key].title;
-                document.getElementById("tags").value = data[key].tags.join(", ");
-                document.getElementById("time").value = data[key].time;
-                document.getElementById("link").value = data[key].link;
-                document.getElementById("description").value = data[key].description;
-                document.getElementById("webp").value = data[key].demo.webp;
-                document.getElementById("png").value = data[key].demo.png;
-                document.getElementById("alt").value = data[key].demo.alt;
-            } else {
-                infoMessage.textContent = `Project with key "${key}" does not exist. You can create a new project.`;
-                ExistingKeys = false;
-                document.getElementById("delete").style.display = "none";
-                document.getElementById("submit").textContent = "Create";
-                clearFields();
-            }
+        const data = JSON.parse(stored);
+        if (data[key]) {
+            infoMessage.textContent = `Project with key "${key}" exists. You can update/delete it.`;
+            ExistingKeys = true;
+            document.getElementById("delete").style.display = "inline-block";
+            document.getElementById("submit").textContent = "Update";
+            document.getElementById("title").value = data[key].title;
+            document.getElementById("tags").value = data[key].tags.join(", ");
+            document.getElementById("time").value = data[key].time;
+            document.getElementById("link").value = data[key].link;
+            document.getElementById("description").value = data[key].description;
+            document.getElementById("webp").value = data[key].demo.webp;
+            document.getElementById("png").value = data[key].demo.png;
+            document.getElementById("alt").value = data[key].demo.alt;
         } else {
-            infoMessage.textContent = "Error: Failed to find or initialize project data in local storage.";
+            infoMessage.textContent = `Project with key "${key}" does not exist. You can create a new project.`;
+            ExistingKeys = false;
+            document.getElementById("delete").style.display = "none";
+            document.getElementById("submit").textContent = "Create";
+            clearFields();
         }
     } catch (err) {
         console.error("Error checking key:", err);
