@@ -37,6 +37,7 @@
   <link href="styles/main.css" rel="stylesheet" />
   <script src="files/theme.js" defer></script>
   <script src="files/project-card.js" type="module" defer></script>
+  <script src="files/load_projects.js" defer></script>
   <title>Rosie Wang's personal website | Projects</title>
 </head>
 <body>
@@ -61,13 +62,14 @@
       <p><b>Tools & Environments:</b> Linux, Git, Docker, Conda, Markdown, LaTeX</p>
       <p><b>DevOps:</b> AWS, CI/CD, Pulumi, .NET, Figma</p>
     </section>
-    <div id="gallery">
-      <project-card>
-      </project-card>
-      <project-card></project-card>
-      <project-card></project-card>
+    <div class = "button-group" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+      <a href="admin.html">Refreshing Projects...</a>
+      <button id="load-local" class="load">Load Local</button>
+      <button id="load-remote" class="load">Load Remote</button>
     </div>
-    <article id="go-project">
+    <div id="gallery">
+    </div>
+    <article id="go-details">
         <header class="experience-header">
             <h2>Video Streaming Platform with Live Comments</h2>
             <picture class="logo">
@@ -84,12 +86,12 @@
         </ul>
         <p>The overall workflow is shown below:</p>
         <picture class="demo">
-            <source srcset="images/go_demo.webp" type="image/webp" media="(max-width: 40px)">
+            <source srcset="images/go_demo.webp" type="image/webp" media="(max-width: 400px)">
             <img src="images/go_demo.png" alt="Video Streaming Platform Workflow Demostration">
         </picture>
         <a href="https://github.com/Leullque/distributed_video_streaming">Github Repo →</a>
     </article>
-    <article id="arduino-project">
+    <article id="arduino-details">
       <header class="experience-header">
         <h2>Low-energy consumption drowning detection wristband</h2>
         <picture class="logo">

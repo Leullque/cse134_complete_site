@@ -52,17 +52,17 @@ class ProjectCard extends HTMLElement {
             </style>
             <article>
                 <hgroup>
-                    <h2>Video Streaming Platform with Live Comments</h2>
-                    <p class="tags"> Go, grpc, AWS</p>
+                    <h2>${this.getAttribute("title")}</h2>
+                    <p class="tags">${this.getAttribute("tags")}</p>
                 </hgroup>
                 
                 <picture class="demo">
-                    <source srcset="images/go_demo.webp" type="image/webp" media="(max-width: 600px)">
-                    <img src="images/go_demo.png" alt="Video Streaming Platform Workflow Demostration">
+                    <source srcset="${this.getAttribute("webp")}" type="image/webp" media="(max-width: 600px)">
+                    <img src="${this.getAttribute("png")}" alt="${this.getAttribute("alt")}">
                 </picture>
-                <p class="description">A Go scalable video streaming platform with FFmpeg integration and Redis Pub/Sub for live comments.</p>
-                <p class="time">Apr 2025 - June 2025</p>
-                <a href="#go-details">Learn more →</a>
+                <p class="description">${this.getAttribute("description")}</p>
+                <p class="time">${this.getAttribute("time")}</p>
+                <a href="${this.getAttribute("link")}">Learn more →</a>
             </article>
             `;
     }

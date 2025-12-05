@@ -236,6 +236,13 @@ header.experience-header h2, header.experience-header h3 {
   height: 40px;
 }
 
+.demo img, .demo source, .demo picture {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 form {
   max-width: 500px;
@@ -360,4 +367,16 @@ form button[type="submit"]:hover {
 
 ::view-transition-new(root) {
     animation: 1s move-in;
+}
+
+button.load {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--text-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }

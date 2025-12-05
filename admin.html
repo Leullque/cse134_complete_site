@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style media="screen">
+    nav { border: 1px solid black; }
+    form p#error-message {
+        color: red;
+        min-height: 1.5rem;
+        padding: 0;
+    }
+    form p#info-message, form p#submission-info{
+        color: var(--text-color);
+        min-height: 1.5rem;
+        padding: 0;
+    }
+    form p#char-counts {
+        font-size: 0.8rem;
+        color: var(--paragraph-color);
+        margin-top: -1rem;
+        text-align: right;
+    }
+    input, textarea {
+        border: 1px solid var(--main-color);
+        border-radius: 6px;
+        color: var(--black-color);
+    }
+    input::placeholder, textarea::placeholder {
+        color: var(--grey-color);
+    }
+    input:user-invalid, textarea:user-invalid {
+        border: 1px solid red;
+        border-radius: 6px;
+    }
+    .flash {
+        animation: flash-red 0.5s ease;
+    }
+    .warning {
+        border-color: orange;
+    }
+    .warning:focus {
+        border-color: orange !important; 
+        outline: orange;
+        box-shadow: 0 0 5px orange;
+    }
+
+    @keyframes flash-red {
+        0%   { background-color: #da7777; }
+        100% { background-color: white; }
+    }
+    form button#check{
+      padding: 0.3rem 0.6rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: rgb(108, 167, 71);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    form button#delete{
+      padding: 0.3rem 0.6rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      display: none;
+    }
+    form button#submit:disabled {
+      background-color: grey;
+      cursor: not-allowed;
+    }
+</style>
+  <noscript>
+    <style>
+      #darkmode_button {
+        display: none;
+      }
+    </style>
+  </noscript>
+  <link href="images/favicon.ico" rel="icon" />
+  <link href="styles/main.css" rel="stylesheet" />
+  <script src="files/theme.js" defer></script>
+  <script src="files/crud.js" defer></script>
+  <title>Rosie Wang's personal website | Admin</title>
+</head>
+<body>
+  <header>
+    <nav>
+        <a href="index.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <section id="settings" style="display: flex; align-items: right; gap: 1rem;">
+      <button id="darkmode_button">dark</button>
+      <p style="font-family: 'HandwrittenMarker', sans-serif; white-space: nowrap;">Rosie Wang</p>
+    </section>
+  </header>
+  <main>
+    <h1>Admin Panel</h1>
+    <p>This is the administration panel for managing project data.</p>
+    <form id="crud_request">
+        <fieldset>
+            <legend>Identifier</legend>
+            <p>Please first enter the identifier key to check whether this project exists.</p>
+            <label for="key">key:
+                <input required type="text" id="key" name="key" placeholder="A short identifier for storage"/>
+            </label>
+            <div class="button-group">
+                <button id="check" type="button">Check</button>
+                <button id="delete" type="button">Delete</button>
+            </div>
+            <p id="info-message"></p>
+        </fieldset>
+        <p>Fill in the information below to create or update a project.</p>
+        <fieldset>
+            <legend>Basic Information</legend>
+            <label for="title">title:
+                <input type="text" id="title" name="title"/>
+            </label>
+            <label for="tags">tags:
+                <input type="text" id="tags" name="tags" placeholder="tag1, tag2, tag3"/>
+            </label>
+            <label for="time">time:
+                <input type="text" id="time" name="time" placeholder="Jan 20xx - May 20xx"/>
+            </label>
+            <label for="link">link:
+                <input type="text" id="link" name="link" placeholder="URL to project details"/>
+            </label>
+            <label for="description">description:
+                <textarea id="description" name="description"></textarea>
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Picture</legend>
+            <label for="webp">webp:
+                <input type="text" id="webp" name="webp" placeholder="figure URL for webp format"/>
+            </label>
+            <label for="png">png:
+                <input type="text" id="png" name="png" placeholder="figure URL for other format like png"/>
+            </label>
+            <label for="alt">alt:
+                <input type="text" id="alt" name="alt" placeholder="alternative text for the figure"/>
+            </label>
+        </fieldset>
+        <p id="submission-info"></p>
+        <button type="submit" id="submit" disabled>Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p id="connection_method"><a href="mailto:xiw183@ucsd.edu">Email</a> | <a href="https://github.com/Leullque">GitHub</a> | <a href="https://linkedin.com/in/xiruo-wang-rr/">LinkedIn</a></p>
+    <p id="address">
+    Rosie Wang<br>
+    3869 Miramar Street<br>
+    La Jolla, CA 92092
+    </p>
+    <p>&copy; 2025 <span id="LegalIdentification">Rosie Wang</span>, All Right Reserved</p>
+  </footer>
+</body>
+</html>

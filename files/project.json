@@ -1,0 +1,26 @@
+{
+    "go-video-platform": {
+        "title":"Video Streaming Platform with Live Comments",
+        "tags":["Go","grpc","AWS"],
+        "demo":{
+            "webp":"images/go_demo.webp",
+            "png":"images/go_demo.png",
+            "alt":"Video Streaming Platform Workflow Demostration"
+        },
+        "description":"A Go scalable video streaming platform with FFmpeg integration and Redis Pub/Sub for live comments.",
+        "time":"Apr 2025 - June 2025",
+        "link":"#go-details"
+    },
+    "arduino-wristband":{
+        "title":"Low-energy consumption drowning detection wristband",
+        "tags":["Arduino","ESP32","C"],
+        "demo":{
+            "webp":"images/arduino_demo.webp",
+            "png":"images/arduino_demo.png",
+            "alt":"Low-energy consumption drowning detection wristband demonstration"
+        },
+        "description":"A Low energy consumption drowning detection wristband using Arduino and ESP32 with real-time alerts.",
+        "time":"Sept 2023 - Nov 2023",
+        "link":"#arduino-details"
+    }
+}
