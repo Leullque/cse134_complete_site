@@ -43,7 +43,9 @@
   --grey-color: lightgrey;
 }
 
-
+.dark-theme strong{
+  color: var(--text-color);
+}
 
 @font-face {
   /* resource: https://www.fontspace.com */
